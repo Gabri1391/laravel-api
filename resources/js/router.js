@@ -7,7 +7,7 @@ import HomePage from './components/pages/HomePage.vue'
 import ContactsPage from './components/pages/ContactsPage.vue'
 import AboutPage from './components/pages/AboutPage.vue'
 import NotFoundPage from './components/pages/NotFoundPage.vue'
-import PostDetailPage from '/components/pages/PostDetailPage.vue'
+import PostDetailPage from './components/pages/PostDetailPage.vue'
 
 // In questo modo Vue usa VueRouter
 Vue.use(VueRouter)

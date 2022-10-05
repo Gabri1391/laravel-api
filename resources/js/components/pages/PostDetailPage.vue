@@ -1,7 +1,7 @@
 <template>
   <div id="post-detail-page">
     Dettagli post
-    <PostCard :post="post" />
+    <PostCard v-if="post" :post="post" />
   </div>
 </template>
 
@@ -21,7 +21,7 @@ data(){
 },
 methods:{
     fetchPost(){
-        Axios.get("http://localhost:8000/posts/1")
+        Axios.get("http://localhost:8000/api/posts/" + this.$route.params.id)
         .then((res)=>{
             this.post = res.data;
         }).catch((err)=>{
