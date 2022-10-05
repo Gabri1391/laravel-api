@@ -2144,21 +2144,49 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("header", [_c("nav", {
+    staticClass: "navbar navbar-expand-lg navbar-dark bg-dark"
+  }, [_c("a", {
+    staticClass: "navbar-brand",
+    attrs: {
+      href: "/"
+    }
+  }, [_vm._v("Boolpress")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      id: "navbarNavDropdown"
+    }
+  }, [_c("ul", {
+    staticClass: "navbar-nav"
+  }, [_c("li", {
+    staticClass: "nav-item active"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: "/"
+    }
+  }, [_vm._v("Home ")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: "/about"
+    }
+  }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item"
+  }, [_c("router-link", {
+    staticClass: "nav-link",
+    attrs: {
+      to: "/contacts"
+    }
+  }, [_vm._v("Contacts")])], 1)])])])]);
 };
 
 var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("header", [_c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-dark bg-dark"
-  }, [_c("a", {
-    staticClass: "navbar-brand",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Boolpress")]), _vm._v(" "), _c("button", {
+  return _c("button", {
     staticClass: "navbar-toggler",
     attrs: {
       type: "button",
@@ -2170,21 +2198,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("span", {
     staticClass: "navbar-toggler-icon"
-  })]), _vm._v(" "), _c("div", {
-    staticClass: "collapse navbar-collapse",
-    attrs: {
-      id: "navbarNavDropdown"
-    }
-  }, [_c("ul", {
-    staticClass: "navbar-nav"
-  }, [_c("li", {
-    staticClass: "nav-item active"
-  }, [_c("a", {
-    staticClass: "nav-link",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Home ")])])])])])]);
+  })]);
 }];
 render._withStripped = true;
 
