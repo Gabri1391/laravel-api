@@ -2266,9 +2266,21 @@ var render = function render() {
     staticClass: "card bg-gray text-black mb-3"
   }, [_c("div", {
     staticClass: "card-body"
+  }, [_c("div", {
+    staticClass: "d-flex justify-content-between align-items-center"
   }, [_c("h5", {
     staticClass: "card-title"
-  }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("h6", {
+  }, [_vm._v("\n            " + _vm._s(_vm.post.title) + "\n        ")]), _vm._v(" "), _c("router-link", {
+    staticClass: "btn btn-sm btn-primary",
+    attrs: {
+      to: {
+        name: "post-detail",
+        params: {
+          id: _vm.post.id
+        }
+      }
+    }
+  }, [_vm._v("Vedi post")])], 1), _vm._v(" "), _c("h6", {
     staticClass: "card-subtitle mb-2 text-muted"
   }, [_vm._v("\n            Pubblicato il: " + _vm._s(_vm.publishedAt) + "\n        ")]), _vm._v(" "), _c("p", [_vm._v("\n            " + _vm._s(_vm.post.content) + "\n        ")])])]);
 };
@@ -54632,9 +54644,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_pages_ContactsPage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/pages/ContactsPage.vue */ "./resources/js/components/pages/ContactsPage.vue");
 /* harmony import */ var _components_pages_AboutPage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/pages/AboutPage.vue */ "./resources/js/components/pages/AboutPage.vue");
 /* harmony import */ var _components_pages_NotFoundPage_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/pages/NotFoundPage.vue */ "./resources/js/components/pages/NotFoundPage.vue");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '/components/pages/PostDetailPage.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 // Importo di Vue e di Vue-Router
 
  // Importo dei componenti
+
 
 
 
@@ -54658,6 +54672,10 @@ var routes = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/contacts',
     component: _components_pages_ContactsPage_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     name: 'contacts'
+  }, {
+    path: '/posts/:id',
+    component: !(function webpackMissingModule() { var e = new Error("Cannot find module '/components/pages/PostDetailPage.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),
+    name: 'post-detail'
   }, {
     path: '*',
     component: _components_pages_NotFoundPage_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
