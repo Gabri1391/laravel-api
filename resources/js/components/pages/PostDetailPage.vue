@@ -21,7 +21,7 @@ data(){
 },
 methods:{
     fetchPost(){
-        Axios.get("http://localhost:8000/api/posts/" + this.$route.params.id)
+        Axios.get("http://localhost:8000/api/posts/" + this.$route.params.id )
         .then((res)=>{
             this.post = res.data;
         }).catch((err)=>{
