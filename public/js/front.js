@@ -2163,21 +2163,27 @@ var render = function render() {
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/"
+      to: {
+        name: "home"
+      }
     }
   }, [_vm._v("Home ")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/about"
+      to: {
+        name: "about"
+      }
     }
   }, [_vm._v("About")])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
-      to: "/contacts"
+      to: {
+        name: "contacts"
+      }
     }
   }, [_vm._v("Contacts")])], 1)])])])]);
 };
@@ -54642,16 +54648,20 @@ var routes = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
-    component: _components_pages_HomePage_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/contacts',
-    component: _components_pages_ContactsPage_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _components_pages_HomePage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    name: 'home'
   }, {
     path: '/about',
-    component: _components_pages_AboutPage_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _components_pages_AboutPage_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    name: 'about'
+  }, {
+    path: '/contacts',
+    component: _components_pages_ContactsPage_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    name: 'contacts'
   }, {
     path: '*',
-    component: _components_pages_NotFoundPage_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_pages_NotFoundPage_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    name: 'not_found'
   }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (routes);

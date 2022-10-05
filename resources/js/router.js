@@ -17,10 +17,10 @@ const routes = new VueRouter({
 //    Usa vue per la nostra cronologia della navigazione
    mode: 'history',
    routes: [
-    {path: '/', component: HomePage},
-    {path: '/contacts', component: ContactsPage},
-    {path: '/about', component: AboutPage},
-    {path: '*', component: NotFoundPage}
+    {path: '/', component: HomePage, name: 'home'},
+    {path: '/about', component: AboutPage, name: 'about'},
+    {path: '/contacts', component: ContactsPage, name: 'contacts'},
+    {path: '*', component: NotFoundPage, name: 'not_found'}
    ]
 });
 

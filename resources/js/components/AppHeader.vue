@@ -8,13 +8,13 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <router-link class="nav-link" to="/" >Home </router-link>
+        <router-link class="nav-link" :to="{name: 'home'}" >Home </router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/about">About</router-link> 
+        <router-link class="nav-link" :to="{name: 'about'}">About</router-link> 
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/contacts">Contacts</router-link>
+        <router-link class="nav-link" :to="{name: 'contacts'}">Contacts</router-link>
       </li>
     </ul>
   </div>
