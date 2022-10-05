@@ -38,7 +38,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        // Prendo l'id del post e ci aggiungo anche la category e lo user
+        $post = Post::with(['category', 'user'])->find($id);
+        // Se non è presente un post con quell'id mandami in 404 con stringa not found
+        if(!$post) return response('Not found', 404);
+        return response()->json($post);
     }
 
     /**
