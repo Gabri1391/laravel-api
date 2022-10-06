@@ -2106,31 +2106,37 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../PostCard.vue */ "./resources/js/components/PostCard.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _AppLoader_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../AppLoader.vue */ "./resources/js/components/AppLoader.vue");
+/* harmony import */ var _PostCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../PostCard.vue */ "./resources/js/components/PostCard.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostDetailPage",
   components: {
-    PostCard: _PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PostCard: _PostCard_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    AppLoader: _AppLoader_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
-      post: null
+      post: null,
+      isLoading: false
     };
   },
   methods: {
     fetchPost: function fetchPost() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:8000/api/posts/" + this.$route.params.id).then(function (res) {
+      this.isLoading = true;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:8000/api/posts/" + this.$route.params.id).then(function (res) {
         _this.post = res.data;
       })["catch"](function (err) {
         console.error(err);
       }).then(function () {
         console.log('Chiamata terminata');
+        _this.isLoading = false;
       });
     }
   },
@@ -2531,7 +2537,7 @@ var render = function render() {
     attrs: {
       id: "post-detail-page"
     }
-  }, [_vm._v("\n  Dettagli post\n  "), _vm.post ? _c("PostCard", {
+  }, [_vm._v("\n  Dettagli post\n  "), _vm.isLoading ? _c("AppLoader") : !_vm.isLoading && _vm.post ? _c("PostCard", {
     attrs: {
       post: _vm.post
     }
